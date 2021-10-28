@@ -12,10 +12,12 @@ import (
 
 func scan() {
 
+	//You must put HTTPS: // or HTTP: // without / at the end. Example: https://lautarovculic.com
 	fmt.Print("URL: ")
 	var firstUrl string
 	fmt.Scan(&firstUrl)
 
+	//Full path where the file is located without quotation marks. Example: C:\Users\lauta\Desktop\wordlist.txt
 	fmt.Print("File path: ")
 	var firstPath string
 	fmt.Scan(&firstPath)
@@ -61,6 +63,7 @@ func scan() {
 			log.Fatalln(err)
 		}
 
+		//Leave the status code you want to find.
 		if resp.StatusCode == 200 || resp.StatusCode == 204 || resp.StatusCode == 301 || resp.StatusCode == 302 || resp.StatusCode == 307 || resp.StatusCode == 401 || resp.StatusCode == 403 {
 			fmt.Println("["+firstUrl+"/"+eachline+"] "+"HTTP Response Status:", resp.StatusCode, http.StatusText(resp.StatusCode))
 		}
@@ -73,7 +76,7 @@ func main() {
 
 	println("|| Lautaro Villarreal Culic' ||")
 	println("|| https://lautarovculic.com ||")
-	println("|||||||| zDirb -- v0.2 ||||||||")
+	println("|||||||| goDirb - v0.2 ||||||||")
 	println("")
 	println("")
 
